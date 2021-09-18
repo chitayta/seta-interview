@@ -29,7 +29,6 @@ public class _9_ProductOfElementsTest {
                 productOfElementsWithoutDivision(Arrays.asList(1, 2, 3, 4))
         ).containsExactly(24, 12, 8, 6);
 
-        System.out.println(productOfElementsWithoutDivision(Arrays.asList(-1, 1, 0, -3, 3)));
         assertThat(
                 productOfElementsWithoutDivision(Arrays.asList(-1, 1, 0, -3, 3))
         ).containsExactly(0, 0, 9, 0, 0);
