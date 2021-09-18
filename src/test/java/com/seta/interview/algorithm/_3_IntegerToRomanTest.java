@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static com.seta.interview.algorithm._3_IntegerToRoman.toRomanFrom;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class _3_StringToRomanTest {
+public class _3_IntegerToRomanTest {
     @Test
     void testStringToRoman() {
         assertThat(toRomanFrom(3)).isEqualTo("III");
