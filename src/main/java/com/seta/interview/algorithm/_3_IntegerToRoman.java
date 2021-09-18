@@ -1,14 +1,13 @@
 package com.seta.interview.algorithm;
 
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class _3_IntegerToRoman {
-
     private static final Map<Integer, String> VALUES_MAP = new LinkedHashMap<>();
-
     static {
         VALUES_MAP.put(1000, "M");
         VALUES_MAP.put(900, "CM");
@@ -24,7 +23,6 @@ public class _3_IntegerToRoman {
         VALUES_MAP.put(4, "IV");
         VALUES_MAP.put(1, "I");
     }
-
 
     public static String toRomanFrom(Integer input) {
         StringBuilder resultBuilder = new StringBuilder();
