@@ -1,4 +1,4 @@
-package com.seta.interview;
+package com.seta.interview.algorithm;
 
 import com.seta.interview.algorithm.model.Note;
 import org.junit.jupiter.api.Test;
