@@ -8,13 +8,19 @@ import java.util.stream.Collectors;
 public class _2_LongestSubstring {
 
     public static String findLongestSubstring(String input) {
-        List<Character> listCharacters = input.chars().mapToObj(value -> (char) value).collect(Collectors.toList());
-        Iterator<Character> iterator = listCharacters.listIterator();
+        Iterator<Character> iteratorInput =
+                input.chars()
+                        .mapToObj(value -> (char) value).collect(Collectors.toList())
+                        .listIterator();
+        if (!iteratorInput.hasNext()) {
+            return "";
+        }
         List<Character> tempString = new ArrayList<>();
-        tempString.add(iterator.next());
         String longestSubstring = "";
-        while (iterator.hasNext()) {
-            Character c = iterator.next();
+        // Add first character
+        tempString.add(iteratorInput.next());
+        while (iteratorInput.hasNext()) {
+            Character c = iteratorInput.next();
             // if tempString contains c then remove from tempString all the characters from the beginning to c
             if (tempString.contains(c)) {
                 int idx = tempString.indexOf(c);
