@@ -12,7 +12,7 @@ public class _9_ProductOfElementsTest {
 
     // Test the division approach
     @Test
-    void testProductOfElements_WithDevisionApproach() {
+    void testProductOfElements_WithDivisionApproach() {
         assertThat(
                 productOfElementsWithDivision(Arrays.asList(1, 2, 3, 4))
         ).containsExactly(24, 12, 8, 6);
@@ -24,7 +24,7 @@ public class _9_ProductOfElementsTest {
 
     // Test the approach without division
     @Test
-    void testProductOfElements_WithoutDevisionApproach() {
+    void testProductOfElements_WithoutDivisionApproach() {
         assertThat(
                 productOfElementsWithoutDivision(Arrays.asList(1, 2, 3, 4))
         ).containsExactly(24, 12, 8, 6);
