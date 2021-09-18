@@ -31,12 +31,13 @@ public class _9_ProductOfElements {
      * @return
      */
     public static List<Integer> productOfElementsWithoutDivision(List<Integer> inputs) {
-        //
+        // Put inputs to a linked hash map with key == index
         Map<Integer, Integer> mapInputs = inputs.stream()
                 .collect(LinkedHashMap::new, (map, ch) -> map.put(map.size(), ch) , Map::putAll);
         Set<Map.Entry<Integer, Integer>> setEntries = mapInputs.entrySet();
         return setEntries.stream().map(entry ->
                 setEntries.stream()
+                        // Filter the map to exclude current value and multiple other inputs
                         .filter(calculatedEntry -> !calculatedEntry.getKey().equals(entry.getKey()))
                         .map(Map.Entry::getValue)
                         .reduce(1, (currentProduct, nextValue) -> currentProduct * nextValue)
