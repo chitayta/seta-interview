@@ -22,7 +22,6 @@ public class _4_ATMTest {
                 Note.of(200, 10),
                 Note.of(100, 10)
         );
-
         // Then
         // Withdraw 2000 returns (2000, 1)
         assertThat(withdrawAmount(currentBalance, 2000))
@@ -36,7 +35,6 @@ public class _4_ATMTest {
                         Note.of(500, 3),
                         Note.of(100, 1)
                 );
-
         // Withdraw 2600 returns (2000, 1), (500, 1) and (100, 1)
         assertThat(withdrawAmount(currentBalance, 2600))
                 .usingComparatorForType(Comparator.comparing(Note::getQuantity).thenComparing(Note::getValue), Note.class)
@@ -49,7 +47,6 @@ public class _4_ATMTest {
         assertThat(withdrawAmount(currentBalance, 6000))
                 .usingComparatorForType(Comparator.comparing(Note::getQuantity).thenComparing(Note::getValue), Note.class)
                 .containsExactly(Note.of(2000, 3));
-
         // Withdraw 1650 throws "Not a valid amount"
         assertThat(catchThrowable(() -> withdrawAmount(currentBalance, 1650)))
                 .isInstanceOf(IllegalArgumentException.class)
